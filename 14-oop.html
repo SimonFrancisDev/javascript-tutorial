@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+</head>
+<body>
+        <h1>Object Oriented Programming</h1>
+        <div id="output"></div>
+
+
+    <script>
+        // creating a class: looking at oop
+        class Benz {
+            // using the constructor method to inialize the properties of the objects
+            constructor(name, model, price, engineModel) {
+                this.name = name;
+                this.model = model;
+                this.price = price;
+                this.engine = engineModel;
+            }
+            // method to display Benz information
+            // the showValue function helps to get the properties out of the class;
+            // the function is userdefined;
+
+            showProperties() {
+                document.getElementById("output").innerHTML
+                = `Name: ${this.name}\n
+                    Model: ${this.model}\n
+                    Price: ${this.price}\n
+                    Engine: ${this.engineModel}
+                `
+            }
+        }
+
+        // instatiating a new class of Benz Objects;
+         const Gwagon = new Benz("G-Wagon", "2024", "$349,000", "v8");
+         Gwagon.showProperties();
+
+    </script>
+</body>
+</html>

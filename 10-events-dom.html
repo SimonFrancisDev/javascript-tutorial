@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events And The Dom</title>
+</head>
+<body>
+        <input id="textInput" type="text">
+        <div id="output"></div>
+        <!-- mouse events - e.g: click, mousehover, mousedown <br>
+        clipboard events - e.g: cut, copy, paste <br>
+        keyboard events - e.g: keydown, keypress, keyup <br> -->
+
+        <p id="bullets">Bullets: 0</p>
+        <button id="shoot-btn">Shoot=></button>
+        <button id="reload-btn">Reload</button>
+
+    <script>
+        const textInput = document.getElementById("textInput");
+        const output = document.getElementById("output");
+        const bullets = document.getElementById("bullets");
+        const shootBtn = document.getElementById("shoot-btn");
+        const reloadBtn = document.getElementById("reload-btn");
+
+        let numOfBullets = 10;
+        bullets.innerHTML = `Bullets: ${numOfBullets}`;
+        
+        shootBtn.addEventListener("click", () => {
+           if(numOfBullets <= 0) {
+            alert("You are out of bullet, reload")
+           } else {
+                numOfBullets--;
+                bullets.innerHTML = `Bullets: ${numOfBullets}`;
+           }
+        })
+
+        reloadBtn.addEventListener('click', () => {
+            numOfBullets = 10;
+            bullets.innerHTML = `Bullets: ${numOfBullets}`;
+            alert("Reloaded");
+        })
+
+        // keyboard events;
+        output.innerHTML = '';
+        textInput.addEventListener('keypress', (event) => {
+                output.innerHTML += event.key;
+        })
+
+
+
+
+
+
+    </script>
+</body>
+</html>

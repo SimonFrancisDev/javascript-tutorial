@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    
+    <script>
+        // normal syntax for javascript function
+        myAlert();
+        function myAlert() {
+            console.log("Hello world");
+        }
+    
+        // functions as values - (anonymous function i.e function with no name);
+        const alertHi = function() {
+            console.log("I am not entitled to hoisting");
+        }
+
+        // arrow functions
+      const myFunction =  () => {
+            console.log("This is an arrow function");
+        }
+
+        // return statement
+        const calculateNumbers = ()  =>   20 + 30;
+        console.log(calculateNumbers());
+        
+
+        calculateNumbers();
+    </script>
+</body>
+</html>

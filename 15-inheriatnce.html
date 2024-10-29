@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance: OOP</title>
+</head>
+<body>
+    
+    <div id="output"></div>
+
+
+    <script>
+        // base class
+        class Animal {
+            // using the constructor function to inialize the object props
+            constructor(name) {
+                this.name = name;
+            }
+
+            // defining a funtion that can help
+            // us access thr props of the given object;
+            // this function is userdefined.
+
+            speak() {
+                document.getElementById("output")
+                .innerHTML = `${this.name} makes a sound`;
+            }
+        }
+
+        // derived class
+        class Dog extends Animal{
+            constructor(name, breed) {
+               super(name) // call the name of the constructor
+               this.breed = breed;
+            }
+
+            // writing a function to access the props of the 
+            // given object Dog
+            showAnimalProps () {
+                document.getElementById("output")
+                .innerHTML = `
+                    Name: ${this.name} \n
+                    Breed: ${this.breed}
+                `
+            }
+        }
+
+        let dog = new Dog("Rex", "Rottweiler");
+        dog.showAnimalProps();
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans and If Statements</title>
+</head>
+<body>
+    <!-- The Logical Operators -->
+     <h1>Logical Operators</h1>
+     > - greater than <br>
+     < - less than <br>
+     = - equal sign <br>
+     === - strict equality <br>
+     <= - less than or eqaul to <br>
+     >= - greater than or equal to <br>
+     && - the "and" operator <br>
+     || - the "Or" operator <br>
+     ! - the "not" operator <br>
+     ? - the tenary operator <br>
+    
+
+     <!-- The truthy values-->
+      <h1>Truthy Values</h1>
+      1. numbers greater 0 <br>
+      2. variables that are not empty <br>
+
+      <!-- The falsy values -->
+       <h1>Falsy Values</h1>
+       1. values that are undefined; <br>
+       2. null values <br>
+       3. false values <br>
+       4. NaN (Not a Number);
+
+       <!-- The control statements -->
+        <h1>The Control Statements</h1>
+        if, else if, else and switch.
+     
+    <script>
+        // // the control statements
+        // let level = 4;
+        // if(level > 7 ){
+        //     console.log("Yes, level is truly greater than five")
+        // }
+        //     else if (level > 3)  {
+        //         console.log("Level 3+");
+        //     }       
+        // else {
+        //     console.log("Level is not greater than five")
+        // };
+
+        const userAge = Number(prompt("Please tell us your age"));
+        const userCountry = String(prompt('Please tell us your country'));
+        const expectedAge = 18;
+        const expectedCountry = "nigeria"; 
+
+        if(typeof userAge != "Number") {
+            console.log("Invalid age input")
+        } else {
+            if(userAge >= expectedAge && userCountry.toLowerCase() === expectedCountry){
+            console.log("Welcome to this app, please explore the site")
+        } else if (userAge >= expectedAge && userCountry.toLowerCase() != expectedCountry) {
+            console.log("Sorry you didnt meet one of the conditions")
+        } else if (userAge < expectedAge && userCountry.toLowerCase() === expectedCountry) {
+            console.log("Age is not qaulified")
+        } else {
+            console.log("You didnt meet either of the conditions");
+        }
+     }
+
+        
+    </script>
+</body>
+</html>

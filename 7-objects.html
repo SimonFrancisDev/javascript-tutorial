@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects And Dom</title>
+</head>
+<body>
+    <div id="output"></div>
+    
+
+
+    <script>
+        // Objects are data
+        // types that help us to group related values
+        // together.
+
+            let product = {
+                name: "Girls Snickers",
+                description: "white long with stripes",
+                price: 122,
+                qauntity: 10,
+                fun: function () {
+                    console.log("This is just a method");
+                },
+                rating: {
+                    stars: 4.5,
+                    count: 80
+                }
+            }
+            console.log(typeof product);
+            console.log(product);
+
+            // accessing values saved inside of an object
+            // 1. the dot(.) notation method
+            // 2. The squared bracket([]) notation method
+
+            console.log(product.description);
+            console.log(product.stars);
+            
+
+            // Chares
+            console.log(product.rating.stars);
+
+            product.fun(); // method;
+
+            console.log();
+            Math.random();
+
+            console.log(console);
+
+            // adding a value to an object
+            product.warranty = "2years";
+            console.log(product);
+            
+
+            // deleting a value from an object
+            delete product.warranty;
+            console.log(product);
+
+            // squared bracket notation
+            let userDetails = {
+                firstName: "Johnson",
+                lastName: "Helen",
+                oS: "macOS",
+                adrress: "Suite 4 Plaza, 1st Avenue, Gwarimpa",
+                Age: 20,
+                subscription: "Premium",
+                "sub-expired": false
+            };
+            userDetails.firstName
+            userDetails.lastName
+            userDetails.oS
+
+            console.log(userDetails["sub-expired"])
+
+            
+            // The Dom 
+            // The Document Object Model
+
+            
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

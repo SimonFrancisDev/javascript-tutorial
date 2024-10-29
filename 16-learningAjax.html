@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Javascript: XMLHttpRequest</title>
+</head>
+<body>
+    
+    <h1>XMLHttpRequest Example</h1>
+    <button id="loadData">Load Data</button>
+    <div id="result"></div>
+
+    <script>
+       const dataBtn = document.getElementById('loadData');
+       dataBtn.addEventListener('click', () => {
+        // create a new XMLHttpRequest;
+         let xhr = new XMLHttpRequest;
+
+         // configure the request;
+         xhr.open('GET', 'https://jsonplacholder.typicode.com/posts/1', true);
+
+         // set a callback to handle the request
+         xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4) { // 4 means is done
+                if(xhr.status === 200) { // 200 means that request is sucessfull
+                    
+                    // parse the JSON response;
+                    let response = JSON.parse(xhr.responseText);
+
+                    // display the result on the wb page;
+                    document.getElementById('result').innerText = JSON.stringify(response, null, 2);
+                } else {
+                    // handle the error;
+                    document.getElementById('result').innerText = "Error" + xhr.status 
+                }
+            }
+         };
+
+         // send the request;
+         xhr.send();
+       })
+
+    </script>
+</body>
+
+</html>

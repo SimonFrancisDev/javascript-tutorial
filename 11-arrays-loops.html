@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays And Loops</title>
+</head>
+<body>
+    
+
+    <script>
+        // loops
+        // the for...loop,
+        // the while...loop,
+        // the do...while loop.
+
+        // the for...loop;
+        for(let i = 0;  i <= 10; i++){
+            console.log(i);
+        }
+
+        // the while...loop;
+        let j = 1;
+        while(j <= 20) {
+            console.log(j);
+            j++;
+        }
+
+        // do...while loop
+        let k = 0;
+        do {
+                console.log(k);
+                k++;
+        } while(k < 40);
+
+
+        // Arrays
+        const foodItems = [
+            'Rice',
+            'beans',
+            'Yam',
+            100,
+            {productPrice: 123, qauntity: 4},
+            [1, 2, 3, 4],
+            false,
+            true
+        ];
+        console.log(typeof foodItems);
+        console.log(Array.isArray(foodItems));
+        console.log(foodItems);
+
+        // accessing the values saved inside of an array
+        console.log(foodItems.length);
+
+        console.log(foodItems[3]);
+
+        // accessing arrays in an array
+        console.log(foodItems[5][2]);
+
+        // Array Methods;
+        // adding a value in front of an array;
+        foodItems.unshift('hello');
+        console.log(foodItems)
+        // adding a value at the end of an array
+        foodItems.push("Last");
+        console.log(foodItems);
+        // removing a value from the front of an array;
+        foodItems.shift();
+        console.log(foodItems);
+        // removing a value from the end of an array
+        foodItems.pop();
+        console.log(foodItems);
+
+        // removing a random value in an array;
+        foodItems.splice(2, 2);
+        console.log(foodItems);
+
+        // looping through an array
+        let nums = [2, 9, 10, 4, 8, 9];
+        const newNums = []
+        for(let i = 0; i < nums.length; i++) {
+            newNums.push(nums[i] * 2);
+        }
+        console.log(newNums);
+
+        // the break and continue statement;
+        for(let i = 0; i <= 10; i++) {
+            if(i === 5) {
+                break;
+            } else {
+                console.log(i);
+            }
+
+        }
+
+        for(let i = 0; i <= 10; i++) {
+            if(i % 2 === 0) {
+                continue;
+            } else {
+                console.log(i);
+            }
+        }
+
+        const names = [
+            "Francis",
+            "Treasure",
+            "Dan",
+            "Tolu",
+            "Charles"
+        ]
+    
+        const newNames = [];
+        for (let i = 0; i < names.length; i++) {
+            if(names[i] === 'Francis') {
+                continue;
+            } else {
+                newNames.push(names[i]);
+            }
+        }
+        console.log(newNames);
+
+        // adavanced method of looping through an array
+
+        names.forEach((name, i) => {
+            console.log(i, name)
+        })
+
+        names.forEach((name, index) => {
+            if(name === "Dan") {
+                console.log(name, index);
+            } else {
+                return;
+            }
+        })
+
+        names.forEach((name, index) => {
+            console.log(names[3])
+        })
+
+    </script>
+</body>
+</html>

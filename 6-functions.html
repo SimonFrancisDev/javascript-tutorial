@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+    <h1>Functions are resuable blocks of code</h1>
+    
+
+
+
+
+
+    <script>
+        function greetUser() {
+            console.log("The owner of this windows is SimonFrancisDev")
+        }
+
+
+        const userAge = function checkAge() {
+            let result = 2 + 2;
+            return result;
+        }
+
+        // let result = userAge();
+        console.log(userAge());
+        
+
+        greetUser(); // invoking the function
+        // alert();
+        // prompt(); 
+
+        function calculateNumbers(n1, n2, n3, n4) {
+           let total = n1 + n2 + n3 + n4;
+           console.log(total);
+           return total;
+        }
+        function calNums(){
+            let total = 2 + 4 + 6 + 8;
+            console.log(total);
+            return total;
+        }
+        calNums();
+        calculateNumbers(100000000, 4, 6, 8);
+
+    </script>
+</body>
+</html>

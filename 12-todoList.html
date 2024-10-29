@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+</head>
+<body>
+    <input 
+    placeholder="add to do" 
+    type="text"
+    id="todoInput"
+    >
+    <input
+    id="dueDate"
+    type="date">
+    <button id="add-todo-btn">Add To Do</button>
+    <div id="output"></div>
+    
+
+
+    <script>
+    
+    let addtodoBtn =  document.getElementById("add-todo-btn");
+    let outputDiv = document.getElementById("output");
+
+    const todoList = JSON.parse(localStorage.getItem('todolist')) || [];
+
+    displayTodo();
+
+    addtodoBtn.addEventListener('click', () => {
+            addTodo();
+            displayTodo();
+    })
+
+
+    function displayTodo () {
+        let todoListHTML = ''
+        todoList.forEach((item, index) => {
+            let {todo, dueDate} = item;
+            todoListHTML += `
+            <p>${todo}</p>
+            <p>${dueDate}</p>
+            <button onclick="
+               let notion = prompt('Are you sure you want to delete this item, type yes to continue'); 
+               if(notion) =''
+            ">Delete</button>
+        `
+        })
+        outputDiv.innerHTML = todoListHTML;
+    }
+
+    function addTodo(){
+        let todo =  document.getElementById("todoInput").value;
+        let dateInput =  document.getElementById("dueDate").value;
+        todoList.push(
+            {
+                todo: todo,
+                dueDate: dateInput
+            }
+        )
+        localStorage.setItem('todolist', JSON.stringify(todoList));
+        console.log(todoList);
+    }
+    
+
+
+    </script>
+</body>
+</html>
